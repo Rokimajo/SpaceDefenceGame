@@ -76,11 +76,13 @@ namespace SpaceDefence
         /// Should return the angle between a given direction and the up vector.
         /// </summary>
         /// <param name="direction">The Vector2 pointing out from (0,0) to calculate the angle to.</param>
-        /// <returns> The angle in radians between the the up vector and the direction to the cursor.</returns>
+        /// <returns> The angle in radians between the up vector and the direction to the cursor.</returns>
         public static float GetAngle(Vector2 direction)
         {
-            // TODO: Implement
-            return 0;
+            // todo: need to look if pi should be -= or += (both work but turret either aims at the mouse or away from the mouse)
+            float angle = (float)Math.Atan2(direction.Y, direction.X);
+            angle += MathHelper.PiOver2;
+            return MathHelper.WrapAngle(angle);
         }
 
 
@@ -90,8 +92,7 @@ namespace SpaceDefence
         /// <returns> A Vector2 containing the direction from point1 to point2. </returns>
         public static Vector2 GetDirection(Vector2 point1, Vector2 point2)
         {
-            // TODO Implement, currently pointing up.
-            return -Vector2.UnitY;
+            return Vector2.Normalize(point2 - point1);
         }
 
 

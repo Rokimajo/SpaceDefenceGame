@@ -1,4 +1,5 @@
-﻿using Microsoft.Xna.Framework;
+﻿using System;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 
@@ -9,6 +10,8 @@ namespace SpaceDefence
         private CircleCollider _circleCollider;
         private Texture2D _texture;
         private float playerClearance = 100;
+        private float move_speed = 100f;
+        private float speed_increase = 25f;
 
         public Alien() 
         {
@@ -38,6 +41,44 @@ namespace SpaceDefence
             Vector2 centerOfPlayer = gm.Player.GetPosition().Center.ToVector2();
             while ((_circleCollider.Center - centerOfPlayer).Length() < playerClearance)
                 _circleCollider.Center = gm.RandomScreenLocation();
+        }
+
+        public void Move(GameTime gameTime)
+        {
+            GameManager gm = GameManager.GetGameManager();
+            var playerPos =  gm.Player.GetPosition().Center.ToVector2();
+            Console.WriteLine("playerPos: " + playerPos);
+            float x = _circleCollider.Center.X;
+            float y = _circleCollider.Center.Y;
+            Console.WriteLine("x: " + x + " y: " + y);
+            if (_circleCollider.Center.X < playerPos.X)
+            {
+                Console.WriteLine("move_speed added to x: " + (int)(move_speed * (float)gameTime.ElapsedGameTime.TotalSeconds));
+                x += (int)(move_speed * (float)gameTime.ElapsedGameTime.TotalSeconds);
+            }
+            else if (_circleCollider.Center.X > playerPos.X)
+            {
+                x -= (int)(move_speed * (float)gameTime.ElapsedGameTime.TotalSeconds);
+            }
+
+            if (_circleCollider.Center.Y < playerPos.Y)
+            {
+                y += (int)(move_speed * (float)gameTime.ElapsedGameTime.TotalSeconds);
+            }
+
+            if (_circleCollider.Center.Y > playerPos.Y)
+            {
+                y -= (int)(move_speed * (float)gameTime.ElapsedGameTime.TotalSeconds);
+            }
+            Console.WriteLine("-- AFTER CHANGING-- x: " + x + " y: " + y);
+            Console.WriteLine("moving alien: " + _circleCollider.Center + ", " + _circleCollider.Radius);
+            _circleCollider.Center = new Vector2(x, y);
+        }
+
+        public override void Update(GameTime gameTime)
+        {
+            Move(gameTime);
+            base.Update(gameTime);
         }
 
         public override void Draw(GameTime gameTime, SpriteBatch spriteBatch)

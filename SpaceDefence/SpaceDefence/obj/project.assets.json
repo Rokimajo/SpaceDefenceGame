@@ -238,24 +238,20 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\robin\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\robin\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\HBOshit\\GameDevMinor\\SpaceDefence\\SpaceDefenceGame\\SpaceDefence\\SpaceDefence\\SpaceDefence.csproj",
+      "projectUniqueName": "C:\\Users\\robin\\Documents\\Code_Stuff\\GameDevelopmentMinor\\SpaceDefenseAssignment\\SpaceDefenceGame\\SpaceDefence\\SpaceDefence\\SpaceDefence.csproj",
       "projectName": "SpaceDefence",
-      "projectPath": "C:\\HBOshit\\GameDevMinor\\SpaceDefence\\SpaceDefenceGame\\SpaceDefence\\SpaceDefence\\SpaceDefence.csproj",
+      "projectPath": "C:\\Users\\robin\\Documents\\Code_Stuff\\GameDevelopmentMinor\\SpaceDefenseAssignment\\SpaceDefenceGame\\SpaceDefence\\SpaceDefence\\SpaceDefence.csproj",
       "packagesPath": "C:\\Users\\robin\\.nuget\\packages\\",
-      "outputPath": "C:\\HBOshit\\GameDevMinor\\SpaceDefence\\SpaceDefenceGame\\SpaceDefence\\SpaceDefence\\obj\\",
+      "outputPath": "C:\\Users\\robin\\Documents\\Code_Stuff\\GameDevelopmentMinor\\SpaceDefenseAssignment\\SpaceDefenceGame\\SpaceDefence\\SpaceDefence\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
+      "UsingMicrosoftNETSdk": false,
       "configFilePaths": [
         "C:\\Users\\robin\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -263,7 +259,8 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "https://api.nuget.org/v3/index.json": {}
+        "C:\\Program Files\\dotnet\\library-packs": {},
+        "https://www.nuget.org/api/v2/": {}
       },
       "frameworks": {
         "net8.0": {
@@ -311,7 +308,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.406/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.401/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

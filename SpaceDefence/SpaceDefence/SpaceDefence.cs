@@ -15,8 +15,9 @@ namespace SpaceDefence
             _graphics.IsFullScreen = false;
 
             // Set the size of the screen
-            _graphics.PreferredBackBufferWidth = 2000;
-            _graphics.PreferredBackBufferHeight = 1200;
+            // todo: reset to original, 2000 width, 1200 height
+            _graphics.PreferredBackBufferWidth = 1800;
+            _graphics.PreferredBackBufferHeight = 1000;
             
             Content.RootDirectory = "Content";
             IsMouseVisible = true;

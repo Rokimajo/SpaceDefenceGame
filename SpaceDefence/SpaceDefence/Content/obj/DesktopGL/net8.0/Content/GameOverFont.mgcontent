@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PipelineBuildEvent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <SourceFile>C:/Users/robin/Documents/Code_Stuff/GameDevelopmentMinor/SpaceDefenseAssignment/SpaceDefenceGame/SpaceDefence/SpaceDefence/Content/GameOverFont.spritefont</SourceFile>
+  <SourceTime>2025-03-05T11:24:44.5113526+01:00</SourceTime>
+  <DestFile>C:/Users/robin/Documents/Code_Stuff/GameDevelopmentMinor/SpaceDefenseAssignment/SpaceDefenceGame/SpaceDefence/SpaceDefence/Content/bin/DesktopGL/Content/GameOverFont.xnb</DestFile>
+  <DestTime>2025-03-05T11:31:08.9464165+01:00</DestTime>
+  <Importer>FontDescriptionImporter</Importer>
+  <ImporterTime>2024-08-16T19:05:56+02:00</ImporterTime>
+  <Processor>FontDescriptionProcessor</Processor>
+  <ProcessorTime>2024-08-16T19:05:56+02:00</ProcessorTime>
+  <Parameters>
+    <Key>PremultiplyAlpha</Key>
+    <Value>True</Value>
+  </Parameters>
+  <Parameters>
+    <Key>TextureFormat</Key>
+    <Value>Compressed</Value>
+  </Parameters>
+  <Dependencies />
+  <BuildAsset />
+  <BuildOutput />
+</PipelineBuildEvent>

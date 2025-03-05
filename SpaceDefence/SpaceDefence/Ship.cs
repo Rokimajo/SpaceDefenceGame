@@ -56,7 +56,7 @@ namespace SpaceDefence
                 current_speedX += move_speed;
             current_speedX = Math.Clamp(current_speedX, -move_speed, move_speed);
             current_speedY = Math.Clamp(current_speedY, -move_speed, move_speed);
-            // todo: move with gametime?
+            
             oldPosition = _rectangleCollider.shape.Location;
             _rectangleCollider.shape.Location += new Point((int)current_speedX, (int)current_speedY);
         }

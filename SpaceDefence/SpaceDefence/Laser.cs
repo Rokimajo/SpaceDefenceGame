@@ -26,6 +26,7 @@ namespace SpaceDefence
             base.Load(content);
             sprite = content.Load<Texture2D>("Laser");
         }
+        
 
         public override void Update(GameTime gameTime)
         {

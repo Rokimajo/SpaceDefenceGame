@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
@@ -10,8 +11,9 @@ namespace SpaceDefence
         private CircleCollider _circleCollider;
         private Texture2D _texture;
         private float playerClearance = 100;
+        private float alienKillRadius = 75;
         private float move_speed = 100f;
-        private float speed_increase = 25f;
+        private float speed_increase = 15f;
 
         public Alien() 
         {
@@ -29,6 +31,8 @@ namespace SpaceDefence
 
         public override void OnCollision(GameObject other)
         {
+            // Increase speed on alien death
+            move_speed += speed_increase;
             RandomMove();
             base.OnCollision(other);
         }
@@ -43,35 +47,43 @@ namespace SpaceDefence
                 _circleCollider.Center = gm.RandomScreenLocation();
         }
 
+        public bool CheckAlienRange()
+        {
+            GameManager gm = GameManager.GetGameManager();
+            Vector2 centerOfPlayer = gm.Player.GetPosition().Center.ToVector2();
+            if ((_circleCollider.Center - centerOfPlayer).Length() < alienKillRadius)
+            {
+                return true;
+            }
+
+            return false;
+        }
+
         public void Move(GameTime gameTime)
         {
             GameManager gm = GameManager.GetGameManager();
             var playerPos =  gm.Player.GetPosition().Center.ToVector2();
-            Console.WriteLine("playerPos: " + playerPos);
             float x = _circleCollider.Center.X;
             float y = _circleCollider.Center.Y;
-            Console.WriteLine("x: " + x + " y: " + y);
-            if (_circleCollider.Center.X < playerPos.X)
+            var rD2 = _circleCollider.Radius;
+            if (_circleCollider.Center.X < playerPos.X - rD2)
             {
-                Console.WriteLine("move_speed added to x: " + (int)(move_speed * (float)gameTime.ElapsedGameTime.TotalSeconds));
                 x += (int)(move_speed * (float)gameTime.ElapsedGameTime.TotalSeconds);
             }
-            else if (_circleCollider.Center.X > playerPos.X)
+            else if (_circleCollider.Center.X > playerPos.X + rD2)
             {
                 x -= (int)(move_speed * (float)gameTime.ElapsedGameTime.TotalSeconds);
             }
 
-            if (_circleCollider.Center.Y < playerPos.Y)
+            if (_circleCollider.Center.Y < playerPos.Y - rD2)
             {
                 y += (int)(move_speed * (float)gameTime.ElapsedGameTime.TotalSeconds);
             }
 
-            if (_circleCollider.Center.Y > playerPos.Y)
+            if (_circleCollider.Center.Y > playerPos.Y + rD2)
             {
                 y -= (int)(move_speed * (float)gameTime.ElapsedGameTime.TotalSeconds);
             }
-            Console.WriteLine("-- AFTER CHANGING-- x: " + x + " y: " + y);
-            Console.WriteLine("moving alien: " + _circleCollider.Center + ", " + _circleCollider.Radius);
             _circleCollider.Center = new Vector2(x, y);
         }
 
@@ -79,6 +91,13 @@ namespace SpaceDefence
         {
             Move(gameTime);
             base.Update(gameTime);
+            // Game Over if alien is within range
+            if (CheckAlienRange())
+            {
+                var gm = GameManager.GetGameManager();
+                gm.RemoveAllGameObjects();
+                gm.AddGameObject(new GameOverScreen());
+            }
         }
 
         public override void Draw(GameTime gameTime, SpriteBatch spriteBatch)

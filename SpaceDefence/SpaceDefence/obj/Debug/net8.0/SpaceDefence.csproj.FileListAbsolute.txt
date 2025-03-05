@@ -64,3 +64,4 @@ C:\Users\robin\Documents\Code_Stuff\GameDevelopmentMinor\SpaceDefenseAssignment\
 C:\Users\robin\Documents\Code_Stuff\GameDevelopmentMinor\SpaceDefenseAssignment\SpaceDefenceGame\SpaceDefence\SpaceDefence\obj\Debug\net8.0\SpaceDefence.pdb
 C:\Users\robin\Documents\Code_Stuff\GameDevelopmentMinor\SpaceDefenseAssignment\SpaceDefenceGame\SpaceDefence\SpaceDefence\obj\Debug\net8.0\SpaceDefence.genruntimeconfig.cache
 C:\Users\robin\Documents\Code_Stuff\GameDevelopmentMinor\SpaceDefenseAssignment\SpaceDefenceGame\SpaceDefence\SpaceDefence\obj\Debug\net8.0\ref\SpaceDefence.dll
+C:\Users\robin\Documents\Code_Stuff\GameDevelopmentMinor\SpaceDefenseAssignment\SpaceDefenceGame\SpaceDefence\SpaceDefence\bin\Debug\net8.0\Content\GameOverFont.xnb

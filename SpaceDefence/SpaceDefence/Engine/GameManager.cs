@@ -142,6 +142,14 @@ namespace SpaceDefence
             _toBeRemoved.Add(gameObject);
         }
 
+        public void RemoveAllGameObjects()
+        {
+            foreach (GameObject gameObject in _gameObjects)
+            {
+                _toBeRemoved.Add(gameObject);
+            }
+        }
+
         /// <summary>
         /// Get a random location on the screen.
         /// </summary>

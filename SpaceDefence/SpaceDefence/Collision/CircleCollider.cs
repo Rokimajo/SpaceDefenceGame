@@ -62,8 +62,7 @@ namespace SpaceDefence
         /// <returns>true there is any overlap between the two Circles.</returns>
         public override bool Intersects(CircleCollider other)
         {
-            // TODO Implement
-            return false;
+            return (Center - other.Center).Length() < Radius + other.Radius;
         }
 
 
@@ -74,9 +73,49 @@ namespace SpaceDefence
         /// <returns>true there is any overlap between the Circle and the Rectangle.</returns>
         public override bool Intersects(RectangleCollider other)
         {
-            // TODO Implement
-            return  false;
+            float rectLeft = other.shape.Left;
+            float rectRight = other.shape.Right;
+            float rectTop = other.shape.Top;
+            float rectBottom = other.shape.Bottom;
+            
+            float cx = Center.X;
+            float cy = Center.Y;
+            
+            if (cy >= rectTop && cy <= rectBottom)
+            {
+                if (cx + Radius > rectLeft && cx - Radius < rectRight)
+                {
+                    return true;
+                }
+            }
+            
+            if (cx >= rectLeft && cx <= rectRight)
+            {
+                if (cy + Radius > rectTop && cy - Radius < rectBottom)
+                {
+                    return true;
+                }
+            }
+            
+            Vector2[] corners = new Vector2[]
+            {
+                new Vector2(rectLeft, rectTop),
+                new Vector2(rectRight, rectTop), 
+                new Vector2(rectLeft, rectBottom),
+                new Vector2(rectRight, rectBottom) 
+            };
+            
+            foreach (Vector2 corner in corners)
+            {
+                if (Contains(corner))
+                {
+                    return true;
+                }
+            }
+
+            return false;
         }
+        
         /// <summary>
         /// Gets whether or not the Circle intersects the Line
         /// </summary>

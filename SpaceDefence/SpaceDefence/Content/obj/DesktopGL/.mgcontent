@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SourceFileCollection xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Profile>Reach</Profile>
+  <Platform>DesktopGL</Platform>
+  <Config />
+  <SourceFiles>
+    <File>C:/Users/robin/Documents/Code_Stuff/GameDevelopmentMinor/SpaceDefenseAssignment/SpaceDefenceGame/SpaceDefence/SpaceDefence/Content/GameOverFont.spritefont</File>
+  </SourceFiles>
+  <DestFiles>
+    <File>PixelFont.spritefont</File>
+  </DestFiles>
+</SourceFileCollection>

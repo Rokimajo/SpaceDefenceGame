@@ -92,6 +92,13 @@
 /processorParam:TextureFormat=Color
 /build:Laser.png
 
+#begin PixelFont.spritefont
+/importer:FontDescriptionImporter
+/processor:FontDescriptionProcessor
+/processorParam:PremultiplyAlpha=True
+/processorParam:TextureFormat=Compressed
+/build:PixelFont.spritefont
+
 #begin ship_body.png
 /importer:TextureImporter
 /processor:TextureProcessor

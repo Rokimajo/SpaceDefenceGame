@@ -11,9 +11,11 @@
     <File>C:/Users/robin/Documents/Code_Stuff/GameDevelopmentMinor/SpaceDefenseAssignment/SpaceDefenceGame/SpaceDefence/SpaceDefence/Content/GameOverFont.spritefont</File>
     <File>C:/Users/robin/Documents/Code_Stuff/GameDevelopmentMinor/SpaceDefenseAssignment/SpaceDefenceGame/SpaceDefence/SpaceDefence/Content/laser_turret.png</File>
     <File>C:/Users/robin/Documents/Code_Stuff/GameDevelopmentMinor/SpaceDefenseAssignment/SpaceDefenceGame/SpaceDefence/SpaceDefence/Content/Laser.png</File>
+    <File>C:/Users/robin/Documents/Code_Stuff/GameDevelopmentMinor/SpaceDefenseAssignment/SpaceDefenceGame/SpaceDefence/SpaceDefence/Content/PixelFont.spritefont</File>
     <File>C:/Users/robin/Documents/Code_Stuff/GameDevelopmentMinor/SpaceDefenseAssignment/SpaceDefenceGame/SpaceDefence/SpaceDefence/Content/ship_body.png</File>
   </SourceFiles>
   <DestFiles>
+    <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />

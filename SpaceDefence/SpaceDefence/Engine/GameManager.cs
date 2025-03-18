@@ -13,6 +13,7 @@ namespace SpaceDefence
     {
         private static GameManager gameManager;
 
+        private GameState _gameState;
         private List<GameObject> _gameObjects;
         private List<GameObject> _toBeRemoved;
         private List<GameObject> _toBeAdded;
@@ -36,6 +37,7 @@ namespace SpaceDefence
             _toBeAdded = new List<GameObject>();
             InputManager = new InputManager();
             RNG = new Random();
+            _gameState = GameState.GameStart;
         }
 
         public void Initialize(ContentManager content, Game game, Ship player)
@@ -51,6 +53,11 @@ namespace SpaceDefence
             {
                 gameObject.Load(content);
             }
+        }
+
+        public void SetGameState(GameState gameState)
+        {
+            _gameState = gameState;
         }
 
         public void HandleInput(InputManager inputManager)
@@ -81,18 +88,96 @@ namespace SpaceDefence
         public void Update(GameTime gameTime) 
         {
             InputManager.Update();
+            // Check input on GM update and pause the game if the key is pressed.
+            if (InputManager.IsKeyPress(Keys.Space) && _gameState == GameState.GameRunning)
+            {
+                SetGameState(GameState.GamePaused);
+                AddGameObject(new PauseScreen());
+            }
+                
+            switch (_gameState)
+            {
+                case GameState.GameStart:
+                {
+                    GameStart_Update(gameTime);
+                    break;
+                }
+                case GameState.GameRunning:
+                {
+                    GameRunning_Update(gameTime);
+                    break;
+                }
+                case GameState.GamePaused:
+                {
+                    GamePaused_Update(gameTime);
+                    break;
+                }
+                default:
+                {
+                    throw new NotImplementedException();
+                }
+            }
+        }
+
+        public void GamePaused_Update(GameTime gameTime)
+        {
+            foreach (GameObject gameObject in _toBeAdded)
+            {
+                gameObject.Load(_content);
+                _gameObjects.Add(gameObject);
+            }
+            _toBeAdded.Clear();
+            
+            var pauseScreen = _gameObjects.Find(gameObject => gameObject is PauseScreen);
+            if (pauseScreen != null)
+            {
+                pauseScreen.HandleInput(InputManager);
+                pauseScreen.Update(gameTime);
+            }
+            
+            foreach (GameObject gameObject in _toBeRemoved)
+            {
+                gameObject.Destroy();
+                _gameObjects.Remove(gameObject);
+            }
+            _toBeRemoved.Clear();
+        }
+
+        public void GameStart_Update(GameTime gameTime)
+        {
+            HandleInput(InputManager);
+            foreach (GameObject gameObject in _gameObjects)
+            {
+                gameObject.Update(gameTime);
+            }
+            foreach (GameObject gameObject in _toBeAdded)
+            {
+                gameObject.Load(_content);
+                _gameObjects.Add(gameObject);
+            }
+            _toBeAdded.Clear();
+
+            foreach (GameObject gameObject in _toBeRemoved)
+            {
+                gameObject.Destroy();
+                _gameObjects.Remove(gameObject);
+            }
+            _toBeRemoved.Clear();
+        }
+
+        public void GameRunning_Update(GameTime gameTime)
+        {
 
             // Handle input
             HandleInput(InputManager);
-
-
+            
             // Update
             foreach (GameObject gameObject in _gameObjects)
             {
                 gameObject.Update(gameTime);
             }
 
-            // Check Collission
+            // Check Collision
             CheckCollision();
 
             foreach (GameObject gameObject in _toBeAdded)

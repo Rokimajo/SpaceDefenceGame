@@ -15,9 +15,9 @@ namespace SpaceDefence
             _graphics.IsFullScreen = false;
 
             // Set the size of the screen
-            // todo: reset to original, 2000 width, 1200 height
+            // todo: change back to 1800x2000
             _graphics.PreferredBackBufferWidth = 1800;
-            _graphics.PreferredBackBufferHeight = 1000;
+            _graphics.PreferredBackBufferHeight = 900;
             
             Content.RootDirectory = "Content";
             IsMouseVisible = true;
@@ -31,12 +31,10 @@ namespace SpaceDefence
 
             // Place the player at the center of the screen
             Ship player = new Ship(new Point(GraphicsDevice.Viewport.Width/2,GraphicsDevice.Viewport.Height/2));
-
             // Add the starting objects to the GameManager
             _gameManager.Initialize(Content, this, player);
-            _gameManager.AddGameObject(player);
-            _gameManager.AddGameObject(new Alien());
-            _gameManager.AddGameObject(new Supply());
+            _gameManager.AddGameObject(new StartScreen());
+            _gameManager.SetGameState(GameState.GameStart);
         }
 
         protected override void LoadContent()

@@ -5,9 +5,11 @@
   <Config />
   <SourceFiles>
     <File>C:/Users/robin/Documents/Code_Stuff/GameDevelopmentMinor/SpaceDefenseAssignment/SpaceDefenceGame/SpaceDefence/SpaceDefence/Content/Alien.png</File>
+    <File>C:/Users/robin/Documents/Code_Stuff/GameDevelopmentMinor/SpaceDefenseAssignment/SpaceDefenceGame/SpaceDefence/SpaceDefence/Content/asteroid.png</File>
     <File>C:/Users/robin/Documents/Code_Stuff/GameDevelopmentMinor/SpaceDefenseAssignment/SpaceDefenceGame/SpaceDefence/SpaceDefence/Content/base_turret.png</File>
     <File>C:/Users/robin/Documents/Code_Stuff/GameDevelopmentMinor/SpaceDefenseAssignment/SpaceDefenceGame/SpaceDefence/SpaceDefence/Content/Bullet.png</File>
     <File>C:/Users/robin/Documents/Code_Stuff/GameDevelopmentMinor/SpaceDefenseAssignment/SpaceDefenceGame/SpaceDefence/SpaceDefence/Content/Crate.png</File>
+    <File>C:/Users/robin/Documents/Code_Stuff/GameDevelopmentMinor/SpaceDefenseAssignment/SpaceDefenceGame/SpaceDefence/SpaceDefence/Content/Explosion.png</File>
     <File>C:/Users/robin/Documents/Code_Stuff/GameDevelopmentMinor/SpaceDefenseAssignment/SpaceDefenceGame/SpaceDefence/SpaceDefence/Content/GameOverFont.spritefont</File>
     <File>C:/Users/robin/Documents/Code_Stuff/GameDevelopmentMinor/SpaceDefenseAssignment/SpaceDefenceGame/SpaceDefence/SpaceDefence/Content/laser_turret.png</File>
     <File>C:/Users/robin/Documents/Code_Stuff/GameDevelopmentMinor/SpaceDefenseAssignment/SpaceDefenceGame/SpaceDefence/SpaceDefence/Content/Laser.png</File>
@@ -15,6 +17,8 @@
     <File>C:/Users/robin/Documents/Code_Stuff/GameDevelopmentMinor/SpaceDefenseAssignment/SpaceDefenceGame/SpaceDefence/SpaceDefence/Content/ship_body.png</File>
   </SourceFiles>
   <DestFiles>
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />

@@ -8,23 +8,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a4c6ec63-37e2-4aa0-aca7-e74ab7a98561" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/SpaceDefence/Button.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SpaceDefence/Content/Pixellari.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SpaceDefence/GameState.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SpaceDefence/PauseScreen.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SpaceDefence/StartScreen.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.SpaceDefence/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.SpaceDefence/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SpaceDefence/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SpaceDefence/AnimationPlayer.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SpaceDefence/Asteroid.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SpaceDefence/Content/Explosion.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SpaceDefence/Content/asteroid.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.SpaceDefence/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SpaceDefence/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpaceDefence/Alien.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SpaceDefence/Alien.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SpaceDefence/Content/Content.mgcb" beforeDir="false" afterPath="$PROJECT_DIR$/SpaceDefence/Content/Content.mgcb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SpaceDefence/Content/obj/DesktopGL/net8.0/Content/.mgcontent" beforeDir="false" afterPath="$PROJECT_DIR$/SpaceDefence/Content/obj/DesktopGL/net8.0/Content/.mgcontent" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpaceDefence/Content/obj/DesktopGL/net8.0/Content/.mgstats" beforeDir="false" afterPath="$PROJECT_DIR$/SpaceDefence/Content/obj/DesktopGL/net8.0/Content/.mgstats" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SpaceDefence/Engine/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SpaceDefence/Engine/GameManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpaceDefence/SpaceDefence.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SpaceDefence/SpaceDefence.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpaceDefence/GameState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SpaceDefence/GameState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpaceDefence/Ship.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SpaceDefence/Ship.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SpaceDefence/obj/Debug/net8.0/SpaceDefence.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SpaceDefence/obj/Debug/net8.0/SpaceDefence.AssemblyInfo.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SpaceDefence/obj/Debug/net8.0/SpaceDefence.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/SpaceDefence/obj/Debug/net8.0/SpaceDefence.AssemblyInfoInputs.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SpaceDefence/obj/Debug/net8.0/SpaceDefence.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/SpaceDefence/obj/Debug/net8.0/SpaceDefence.csproj.CoreCompileInputs.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SpaceDefence/obj/Debug/net8.0/SpaceDefence.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/SpaceDefence/obj/Debug/net8.0/SpaceDefence.csproj.FileListAbsolute.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SpaceDefence/obj/Debug/net8.0/SpaceDefence.sourcelink.json" beforeDir="false" afterPath="$PROJECT_DIR$/SpaceDefence/obj/Debug/net8.0/SpaceDefence.sourcelink.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpaceDefence/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/SpaceDefence/obj/rider.project.restore.info" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,26 +57,29 @@
   &quot;associatedIndex&quot;: 6
 }</component>
   <component name="ProjectId" id="2uStEyiabmwwAk259CAbKJ5GdDN" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    ".NET Project.SpaceDefence.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "main",
-    "ignore.virus.scanning.warn.message": "true",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "editor.preferences.inline.completion",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;.NET Project.SpaceDefence.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.inline.completion&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="SpaceDefence" type="DotNetProject" factoryName=".NET Project">
       <option name="EXE_PATH" value="" />
@@ -107,6 +110,9 @@
       <updated>1742253697269</updated>
       <workItem from="1742253698764" duration="189000" />
       <workItem from="1742283921877" duration="10488000" />
+      <workItem from="1742305550074" duration="1354000" />
+      <workItem from="1742382548241" duration="7649000" />
+      <workItem from="1742392648488" duration="913000" />
     </task>
     <servers />
   </component>

@@ -12,8 +12,8 @@ namespace SpaceDefence
         private Texture2D _texture;
         private float playerClearance = 100;
         private float alienKillRadius = 75;
-        private float move_speed = 200f;
-        private float speed_increase = 35f;
+        private float move_speed = 175f;
+        private float speed_increase = 15f;
 
         public Alien() 
         {
@@ -31,8 +31,11 @@ namespace SpaceDefence
 
         public override void OnCollision(GameObject other)
         {
-            // Increase speed on alien death
-            move_speed += speed_increase;
+            // Increase speed on alien death (don't count collisions with other aliens)
+            if (other is not Alien)
+            {
+                move_speed += speed_increase;   
+            }
             RandomMove();
             base.OnCollision(other);
         }
@@ -95,8 +98,7 @@ namespace SpaceDefence
             if (CheckAlienRange())
             {
                 var gm = GameManager.GetGameManager();
-                gm.RemoveAllGameObjects();
-                gm.AddGameObject(new GameOverScreen());
+                gm.RemoveGameObject(gm.Player);
             }
         }
 

@@ -18,6 +18,7 @@ namespace SpaceDefence
         private List<GameObject> _toBeRemoved;
         private List<GameObject> _toBeAdded;
         private ContentManager _content;
+        private float _diffScaleTimer;
 
         public Random RNG { get; private set; }
         public Ship Player { get; private set; }
@@ -38,6 +39,7 @@ namespace SpaceDefence
             InputManager = new InputManager();
             RNG = new Random();
             _gameState = GameState.GameStart;
+            _diffScaleTimer = 0.5f;
         }
 
         public void Initialize(ContentManager content, Game game, Ship player)
@@ -84,9 +86,41 @@ namespace SpaceDefence
             }
             
         }
+
+        public void CheckDiffScaling(GameTime gameTime)
+        {
+            // Check if elapsed game time matches the scale timer field, spawn more enemies if so
+            // e.g.: field is 2, every 2 minutes: spawn more enemies
+            if (_gameState == GameState.GameRunning && gameTime.TotalGameTime.TotalSeconds >= (_diffScaleTimer * 60))
+            {
+                _diffScaleTimer += _diffScaleTimer;
+                // 25% chance to spawn another alien, 75% to spawn asteroid
+                if (RNG.Next(0, 4) == 0)
+                {
+                    AddGameObject(new Alien());
+                }
+                else
+                {
+                    AddGameObject(new Asteroid());
+                }
+            }
+        }
+
+        public void CheckGameOver()
+        {
+            if (_gameState == GameState.GameRunning && _gameObjects.Find(x => x is Ship) == null)
+            {
+                SetGameState(GameState.GameOver);
+                RemoveAllGameObjects();
+                AddGameObject(new GameOverScreen());
+            }
+        }
         
         public void Update(GameTime gameTime) 
         {
+            CheckGameOver();
+            CheckDiffScaling(gameTime);
+            
             InputManager.Update();
             // Check input on GM update and pause the game if the key is pressed.
             if (InputManager.IsKeyPress(Keys.Space) && _gameState == GameState.GameRunning)
@@ -112,11 +146,27 @@ namespace SpaceDefence
                     GamePaused_Update(gameTime);
                     break;
                 }
+                case GameState.GameOver:
+                {
+                    GameOver_Update(gameTime);
+                    break;
+                }
                 default:
                 {
                     throw new NotImplementedException();
                 }
             }
+        }
+
+        public void GameOver_Update(GameTime gameTime)
+        {
+            // only add game objects that need to be added (such as the game over screen), do nothing else.
+            foreach (GameObject gameObject in _toBeAdded)
+            {
+                gameObject.Load(_content);
+                _gameObjects.Add(gameObject);
+            }
+            _toBeAdded.Clear();
         }
 
         public void GamePaused_Update(GameTime gameTime)
@@ -227,13 +277,15 @@ namespace SpaceDefence
             _toBeRemoved.Add(gameObject);
         }
 
-        public void RemoveAllGameObjects()
+        public void DestroyAllGameObjects()
         {
             foreach (GameObject gameObject in _gameObjects)
             {
                 _toBeRemoved.Add(gameObject);
             }
         }
+
+        public void RemoveAllGameObjects() => _gameObjects.Clear();
 
         /// <summary>
         /// Get a random location on the screen.

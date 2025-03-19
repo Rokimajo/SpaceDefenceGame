@@ -4,5 +4,6 @@ public enum GameState
 {
     GameStart,
     GameRunning,
-    GamePaused
+    GamePaused,
+    GameOver
 }

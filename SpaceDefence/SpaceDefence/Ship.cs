@@ -9,6 +9,7 @@ namespace SpaceDefence
 {
     public class Ship : GameObject
     {
+        public float points;
         private Texture2D ship_body;
         private Texture2D base_turret;
         private Texture2D laser_turret;
@@ -29,8 +30,10 @@ namespace SpaceDefence
         public Ship(Point Position)
         {
             _rectangleCollider = new RectangleCollider(new Rectangle(Position, Point.Zero));
+            var x = new Rectangle(0, 0, 0, 0);
             oldPosition = Position;
             SetCollider(_rectangleCollider);
+            points = 0;
         }
 
         public override void Load(ContentManager content)

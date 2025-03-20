@@ -8,12 +8,15 @@ public class AnimationPlayer : GameObject
 {
     private string _spriteName;
     private int _frameTime;
+    private bool _isPlaying;
+    private bool _loopAnimation;
      
     
-    public AnimationPlayer(string spritename, int frametime)
+    public AnimationPlayer(string spritename, int frametime, bool loop = false)
     {
         _spriteName = spritename;
         _frameTime = frametime;
+        _loopAnimation = loop;
     }
 
     public override void Load(ContentManager content)

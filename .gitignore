@@ -23,8 +23,10 @@ mono_crash.*
 # Monogame Dirs n shit
 obj/
 bin/
-Content/obj
+Content/obj/
 .idea/
+*.mgcontent
+
 
 # Build results
 [Dd]ebug/

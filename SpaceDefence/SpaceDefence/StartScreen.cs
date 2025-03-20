@@ -50,6 +50,8 @@ public class StartScreen : GameObject
                 gm.RemoveGameObject(this);
                 gm.AddGameObject(gm.Player);
                 gm.AddGameObject(new Alien());
+                gm.AddGameObject(new Asteroid());
+                gm.AddGameObject(new Asteroid());
                 gm.AddGameObject(new Supply());
                 gm.SetGameState(GameState.GameRunning);
             }

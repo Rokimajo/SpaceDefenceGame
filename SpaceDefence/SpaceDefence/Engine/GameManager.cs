@@ -39,7 +39,7 @@ namespace SpaceDefence
             InputManager = new InputManager();
             RNG = new Random();
             _gameState = GameState.GameStart;
-            _diffScaleTimer = 0.5f;
+            _diffScaleTimer = 0.15f;
         }
 
         public void Initialize(ContentManager content, Game game, Ship player)

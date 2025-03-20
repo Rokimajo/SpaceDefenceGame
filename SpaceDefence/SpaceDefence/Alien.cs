@@ -12,8 +12,8 @@ namespace SpaceDefence
         private Texture2D _texture;
         private float playerClearance = 100;
         private float alienKillRadius = 75;
-        private float move_speed = 175f;
-        private float speed_increase = 15f;
+        private float move_speed = 125f;
+        private float speed_increase = 10f;
 
         public Alien() 
         {

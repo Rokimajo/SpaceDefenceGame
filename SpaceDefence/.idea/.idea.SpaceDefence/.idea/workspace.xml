@@ -7,24 +7,38 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a4c6ec63-37e2-4aa0-aca7-e74ab7a98561" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/SpaceDefence/AnimationPlayer.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SpaceDefence/Asteroid.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SpaceDefence/Content/Explosion.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/SpaceDefence/Content/asteroid.png" afterDir="false" />
+    <list default="true" id="a4c6ec63-37e2-4aa0-aca7-e74ab7a98561" name="Changes" comment="made som echanges">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.SpaceDefence/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SpaceDefence/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SpaceDefence/Alien.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SpaceDefence/Alien.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpaceDefence/Content/Content.mgcb" beforeDir="false" afterPath="$PROJECT_DIR$/SpaceDefence/Content/Content.mgcb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SpaceDefence/Content/obj/DesktopGL/net8.0/Content/.mgcontent" beforeDir="false" afterPath="$PROJECT_DIR$/SpaceDefence/Content/obj/DesktopGL/net8.0/Content/.mgcontent" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SpaceDefence/Content/obj/DesktopGL/net8.0/Content/.mgstats" beforeDir="false" afterPath="$PROJECT_DIR$/SpaceDefence/Content/obj/DesktopGL/net8.0/Content/.mgstats" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpaceDefence/Content/obj/DesktopGL/net8.0/Content/Alien.mgcontent" beforeDir="false" afterPath="$PROJECT_DIR$/SpaceDefence/Content/obj/DesktopGL/net8.0/Content/Alien.mgcontent" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpaceDefence/Content/obj/DesktopGL/net8.0/Content/Bullet.mgcontent" beforeDir="false" afterPath="$PROJECT_DIR$/SpaceDefence/Content/obj/DesktopGL/net8.0/Content/Bullet.mgcontent" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpaceDefence/Content/obj/DesktopGL/net8.0/Content/Crate.mgcontent" beforeDir="false" afterPath="$PROJECT_DIR$/SpaceDefence/Content/obj/DesktopGL/net8.0/Content/Crate.mgcontent" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpaceDefence/Content/obj/DesktopGL/net8.0/Content/Explosion.mgcontent" beforeDir="false" afterPath="$PROJECT_DIR$/SpaceDefence/Content/obj/DesktopGL/net8.0/Content/Explosion.mgcontent" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpaceDefence/Content/obj/DesktopGL/net8.0/Content/GameOverFont.mgcontent" beforeDir="false" afterPath="$PROJECT_DIR$/SpaceDefence/Content/obj/DesktopGL/net8.0/Content/GameOverFont.mgcontent" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpaceDefence/Content/obj/DesktopGL/net8.0/Content/Laser.mgcontent" beforeDir="false" afterPath="$PROJECT_DIR$/SpaceDefence/Content/obj/DesktopGL/net8.0/Content/Laser.mgcontent" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpaceDefence/Content/obj/DesktopGL/net8.0/Content/PixelFont.mgcontent" beforeDir="false" afterPath="$PROJECT_DIR$/SpaceDefence/Content/obj/DesktopGL/net8.0/Content/PixelFont.mgcontent" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpaceDefence/Content/obj/DesktopGL/net8.0/Content/asteroid.mgcontent" beforeDir="false" afterPath="$PROJECT_DIR$/SpaceDefence/Content/obj/DesktopGL/net8.0/Content/asteroid.mgcontent" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpaceDefence/Content/obj/DesktopGL/net8.0/Content/base_turret.mgcontent" beforeDir="false" afterPath="$PROJECT_DIR$/SpaceDefence/Content/obj/DesktopGL/net8.0/Content/base_turret.mgcontent" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpaceDefence/Content/obj/DesktopGL/net8.0/Content/laser_turret.mgcontent" beforeDir="false" afterPath="$PROJECT_DIR$/SpaceDefence/Content/obj/DesktopGL/net8.0/Content/laser_turret.mgcontent" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpaceDefence/Content/obj/DesktopGL/net8.0/Content/ship_body.mgcontent" beforeDir="false" afterPath="$PROJECT_DIR$/SpaceDefence/Content/obj/DesktopGL/net8.0/Content/ship_body.mgcontent" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SpaceDefence/Engine/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SpaceDefence/Engine/GameManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpaceDefence/GameState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SpaceDefence/GameState.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SpaceDefence/Ship.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SpaceDefence/Ship.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpaceDefence/StartScreen.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SpaceDefence/StartScreen.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SpaceDefence/obj/Debug/net8.0/SpaceDefence.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/SpaceDefence/obj/Debug/net8.0/SpaceDefence.AssemblyInfo.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SpaceDefence/obj/Debug/net8.0/SpaceDefence.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/SpaceDefence/obj/Debug/net8.0/SpaceDefence.AssemblyInfoInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpaceDefence/obj/Debug/net8.0/SpaceDefence.GeneratedMSBuildEditorConfig.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/SpaceDefence/obj/Debug/net8.0/SpaceDefence.GeneratedMSBuildEditorConfig.editorconfig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpaceDefence/obj/Debug/net8.0/SpaceDefence.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/SpaceDefence/obj/Debug/net8.0/SpaceDefence.assets.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SpaceDefence/obj/Debug/net8.0/SpaceDefence.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/SpaceDefence/obj/Debug/net8.0/SpaceDefence.csproj.CoreCompileInputs.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SpaceDefence/obj/Debug/net8.0/SpaceDefence.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/SpaceDefence/obj/Debug/net8.0/SpaceDefence.csproj.FileListAbsolute.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpaceDefence/obj/Debug/net8.0/SpaceDefence.genruntimeconfig.cache" beforeDir="false" afterPath="$PROJECT_DIR$/SpaceDefence/obj/Debug/net8.0/SpaceDefence.genruntimeconfig.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SpaceDefence/obj/Debug/net8.0/SpaceDefence.sourcelink.json" beforeDir="false" afterPath="$PROJECT_DIR$/SpaceDefence/obj/Debug/net8.0/SpaceDefence.sourcelink.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpaceDefence/obj/SpaceDefence.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/SpaceDefence/obj/SpaceDefence.csproj.nuget.dgspec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpaceDefence/obj/SpaceDefence.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/SpaceDefence/obj/SpaceDefence.csproj.nuget.g.props" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpaceDefence/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/SpaceDefence/obj/project.assets.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpaceDefence/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/SpaceDefence/obj/project.nuget.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpaceDefence/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/SpaceDefence/obj/project.packagespec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpaceDefence/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/SpaceDefence/obj/rider.project.restore.info" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,15 +57,17 @@
     &quot;assignee&quot;: &quot;Rokimajo&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/Rokimajo/SpaceDefenceGame&quot;,
-    &quot;accountId&quot;: &quot;54523d87-82dd-4cb7-9879-4d0fffeb2228&quot;
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/Rokimajo/SpaceDefenceGame",
+    "accountId": "0bac3df7-1bf0-421e-8113-d828beb0035d"
   }
-}</component>
+}]]></component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/49bab08708434a08802510b75a8ea3691b3400/a5/1def8e0b/Rectangle.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://C:/HBOshit/GameDevMinor/SpaceDefence/SpaceDefenceGame/SpaceDefence/SpaceDefence/AnimationPlayer.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/HBOshit/GameDevMinor/SpaceDefence/SpaceDefenceGame/SpaceDefence/SpaceDefence/obj/project.assets.json" root0="FORCE_HIGHLIGHTING" />
   </component>
+  <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
   &quot;associatedIndex&quot;: 6
@@ -113,15 +129,28 @@
       <workItem from="1742305550074" duration="1354000" />
       <workItem from="1742382548241" duration="7649000" />
       <workItem from="1742392648488" duration="913000" />
+      <workItem from="1742463451102" duration="2093000" />
     </task>
+    <task id="LOCAL-00001" summary="made som echanges">
+      <option name="closed" value="true" />
+      <created>1742465845129</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1742465845129</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="UnityCheckinConfiguration" checkUnsavedScenes="true" />
   <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+    <MESSAGE value="made som echanges" />
+    <option name="LAST_COMMIT_MESSAGE" value="made som echanges" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

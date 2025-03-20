@@ -13,6 +13,7 @@ namespace SpaceDefence
         private Texture2D ship_body;
         private Texture2D base_turret;
         private Texture2D laser_turret;
+        private AnimationPlayer _animPlayer;
         private float buffTimer = 10;
         private float buffDuration = 10f;
         private RectangleCollider _rectangleCollider;
@@ -44,6 +45,8 @@ namespace SpaceDefence
             laser_turret = content.Load<Texture2D>("laser_turret");
             _rectangleCollider.shape.Size = ship_body.Bounds.Size;
             _rectangleCollider.shape.Location -= new Point(ship_body.Width/2, ship_body.Height/2);
+            _animPlayer = new AnimationPlayer("Explosion", 15, _rectangleCollider.shape);
+            _animPlayer.Load(content);
             base.Load(content);
         }
 
@@ -123,6 +126,13 @@ namespace SpaceDefence
             if (double.IsNaN(angle)) return lastShipAngle;
             lastShipAngle = angle;
             return angle;
+        }
+
+        public override void Destroy()
+        {
+            _animPlayer.Reset();
+            _animPlayer.UpdateSpriteLocation(_rectangleCollider.shape);
+            GameManager.GetGameManager().AddGameObject(_animPlayer);
         }
 
         public override void Draw(GameTime gameTime, SpriteBatch spriteBatch)

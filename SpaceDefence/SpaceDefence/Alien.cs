@@ -8,16 +8,18 @@ namespace SpaceDefence
 {
     internal class Alien : GameObject
     {
+        private GameManager _gm;
         private CircleCollider _circleCollider;
+        private AnimationPlayer _animPlayer;
         private Texture2D _texture;
         private float playerClearance = 100;
         private float alienKillRadius = 75;
         private float move_speed = 125f;
         private float speed_increase = 10f;
 
-        public Alien() 
+        public Alien()
         {
-            
+            _gm = GameManager.GetGameManager();
         }
 
         public override void Load(ContentManager content)
@@ -25,8 +27,17 @@ namespace SpaceDefence
             base.Load(content);
             _texture = content.Load<Texture2D>("Alien");
             _circleCollider = new CircleCollider(Vector2.Zero, _texture.Width / 2);
+            _animPlayer = new AnimationPlayer("Explosion", 15, _circleCollider.GetBoundingBox());
+            _animPlayer.Load(content);
             SetCollider(_circleCollider);
             RandomMove();
+        }
+
+        public void PlayAnimation()
+        {
+            _animPlayer.Reset();
+            _animPlayer.UpdateSpriteLocation(_circleCollider.GetBoundingBox());
+            _gm.AddGameObject(_animPlayer);
         }
 
         public override void OnCollision(GameObject other)
@@ -34,10 +45,11 @@ namespace SpaceDefence
             // Increase speed on alien death (don't count collisions with other aliens)
             if (other is not Alien)
             {
-                move_speed += speed_increase;   
+                move_speed += speed_increase;
+                PlayAnimation();
+                RandomMove();
+                base.OnCollision(other);
             }
-            RandomMove();
-            base.OnCollision(other);
         }
 
         public void RandomMove()
@@ -105,9 +117,8 @@ namespace SpaceDefence
         public override void Draw(GameTime gameTime, SpriteBatch spriteBatch)
         {
             spriteBatch.Draw(_texture, _circleCollider.GetBoundingBox(), Color.White);
+            _animPlayer.Draw(gameTime, spriteBatch);
             base.Draw(gameTime, spriteBatch);
         }
-
-
     }
 }

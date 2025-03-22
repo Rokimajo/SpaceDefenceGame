@@ -36,6 +36,10 @@ public class Asteroid : GameObject
 
         public override void OnCollision(GameObject other)
         {
+            // ugly way to not make an asteroid destroy a planet,
+            // in actual game would probably make a proper spawning system based on all other objects
+            if (other is Planet)
+                return;
             base.OnCollision(other);
             var gm = GameManager.GetGameManager();
             // Destroy both the asteroid and the other game object on collision

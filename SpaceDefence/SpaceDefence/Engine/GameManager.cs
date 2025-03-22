@@ -253,6 +253,12 @@ namespace SpaceDefence
                 gameObject.Draw(gameTime, spriteBatch);
             }
             spriteBatch.End();
+            spriteBatch.Begin();
+            foreach (GameObject gameObject in _gameObjects)
+            {
+                gameObject.DrawHUD(gameTime, spriteBatch);
+            }
+            spriteBatch.End();
         }
 
         /// <summary>

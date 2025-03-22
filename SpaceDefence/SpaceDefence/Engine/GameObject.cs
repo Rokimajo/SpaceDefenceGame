@@ -80,6 +80,11 @@ namespace SpaceDefence
         { 
 
         }
+        
+        public virtual void DrawHUD(GameTime gameTime, SpriteBatch spriteBatch) 
+        { 
+
+        }
 
         /// <summary>
         /// Called when the GameObject is removed from the GameManager.

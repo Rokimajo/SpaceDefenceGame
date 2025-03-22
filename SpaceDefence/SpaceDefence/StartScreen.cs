@@ -53,6 +53,10 @@ public class StartScreen : GameObject
                 gm.AddGameObject(new Asteroid());
                 gm.AddGameObject(new Asteroid());
                 gm.AddGameObject(new Supply());
+                // Generate planets on fixed positions based on screen size
+                gm.AddGameObject(new Planet("earth_planet", new Vector2(50, 50), true));
+                var bounds = gm.Game.GraphicsDevice.Viewport.Bounds;
+                gm.AddGameObject(new Planet("alien_planet", new Vector2(bounds.Width - 75, bounds.Height - 100), false));
                 gm.SetGameState(GameState.GameRunning);
             }
 

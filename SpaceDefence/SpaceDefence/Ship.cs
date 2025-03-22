@@ -9,7 +9,8 @@ namespace SpaceDefence
 {
     public class Ship : GameObject
     {
-        public float points;
+        private int _points;
+        private SpriteFont _font;
         private Texture2D ship_body;
         private Texture2D base_turret;
         private Texture2D laser_turret;
@@ -23,6 +24,7 @@ namespace SpaceDefence
         private float current_speedX = 0;
         private float current_speedY = 0;
         private float lastShipAngle = 0; // Save last ship angle incase of no movement
+        private bool _hasCargo;
 
         /// <summary>
         /// The player character
@@ -34,7 +36,8 @@ namespace SpaceDefence
             var x = new Rectangle(0, 0, 0, 0);
             oldPosition = Position;
             SetCollider(_rectangleCollider);
-            points = 0;
+            _points = 0;
+            _hasCargo = false;
         }
 
         public override void Load(ContentManager content)
@@ -43,12 +46,18 @@ namespace SpaceDefence
             ship_body = content.Load<Texture2D>("ship_body");
             base_turret = content.Load<Texture2D>("base_turret");
             laser_turret = content.Load<Texture2D>("laser_turret");
+            _font = content.Load<SpriteFont>("PixelFont");
             _rectangleCollider.shape.Size = ship_body.Bounds.Size;
             _rectangleCollider.shape.Location -= new Point(ship_body.Width/2, ship_body.Height/2);
             _animPlayer = new AnimationPlayer("Explosion", 15, _rectangleCollider.shape);
             _animPlayer.Load(content);
             base.Load(content);
         }
+
+        public bool HasCargo() => _hasCargo;
+        public void AddCargo() => _hasCargo = true;
+        public void RemoveCargo() => _hasCargo = false;
+        public void AddPoints(int points) => _points += points;
 
         private void Move(InputManager inputManager)
         {
@@ -155,6 +164,18 @@ namespace SpaceDefence
             base.Draw(gameTime, spriteBatch);
         }
 
+        public override void DrawHUD(GameTime gameTime, SpriteBatch spriteBatch)
+        {
+            base.DrawHUD(gameTime, spriteBatch);
+            var gm = GameManager.GetGameManager();
+            var pointsString = $"POINTS: {_points}";
+            var cargoString = _hasCargo ? "CARGO: YES" : "CARGO: NO";
+            // draw HUD in top right
+            var bounds = gm.Game.GraphicsDevice.Viewport.Bounds;
+            var hudLoc = new Vector2(bounds.Width - Math.Max(_font.MeasureString(pointsString).Length(), _font.MeasureString(cargoString).Length()), 70);
+            spriteBatch.DrawString(_font, pointsString, hudLoc, Color.White, 0, _font.MeasureString(pointsString) / 2, 1.0f, SpriteEffects.None, 1f);
+            spriteBatch.DrawString(_font, cargoString, new Vector2(hudLoc.X, hudLoc.Y - 30), Color.White, 0, _font.MeasureString(cargoString) / 2, 1.0f, SpriteEffects.None, 1f);
+        }
 
         public void Buff()
         {

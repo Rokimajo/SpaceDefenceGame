@@ -1,4 +1,5 @@
-﻿using Microsoft.Xna.Framework;
+﻿using System;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 
@@ -35,6 +36,20 @@ public class AnimationPlayer : GameObject
         _parent = parent;
         _time = 0;
     }
+    public AnimationPlayer(Texture2D texture2D, int frametime, Rectangle dest, GameObject parent = null, bool loop = false)
+    {
+        _spriteSheet = texture2D;
+        _gm = GameManager.GetGameManager();
+        _frameTime = frametime;
+        _loopAnimation = loop;
+        _destRect = dest;
+        _isPlaying = false;
+        _isFinished = false;
+        _parent = parent;
+        _time = 0;
+    }
+
+    public void SetParent(GameObject obj) => _parent = obj;
 
     public void ToggleAnimationPlaying() => _isPlaying = !_isPlaying;
     public void PlayAnimation() => _isPlaying = true;
@@ -46,13 +61,14 @@ public class AnimationPlayer : GameObject
         _isFinished = false;
         _time = 0;
     }
+    
 
     public void UpdateSpriteLocation(Rectangle dest) => _destRect = dest;
     
     public override void Load(ContentManager content)
     {
         base.Load(content);
-        _spriteSheet = content.Load<Texture2D>(_spriteName);
+        _spriteSheet ??= content.Load<Texture2D>(_spriteName);
         _frameSize = _spriteSheet.Height; // Sprite cutout will be a square, so 32x32 for example.
         _frameAmount = _spriteSheet.Width / _frameSize;
     }
@@ -79,7 +95,7 @@ public class AnimationPlayer : GameObject
         if (_isPlaying)
         {
             _time += gameTime.ElapsedGameTime.Milliseconds;
-        }
+        } 
         _currentFrame = _time / _frameTime;
         if (_loopAnimation)
             _currentFrame %= _frameAmount;

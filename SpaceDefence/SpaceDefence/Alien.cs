@@ -42,6 +42,8 @@ namespace SpaceDefence
 
         public override void OnCollision(GameObject other)
         {
+            if (other is Planet)
+                return;
             // Increase speed on alien death (don't count collisions with other aliens)
             if (other is not Alien)
             {

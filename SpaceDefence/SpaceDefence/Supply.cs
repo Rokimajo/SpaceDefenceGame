@@ -29,7 +29,9 @@ namespace SpaceDefence
         public override void OnCollision(GameObject other)
         {
             RandomMove();
-            GameManager.GetGameManager().Player.Buff();
+            var player = GameManager.GetGameManager().Player;
+            player.Buff();
+            player.SetLaserWeapon();
             base.OnCollision(other);
         }
 

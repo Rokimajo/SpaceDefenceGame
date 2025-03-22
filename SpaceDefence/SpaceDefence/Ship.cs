@@ -9,6 +9,7 @@ namespace SpaceDefence
 {
     public class Ship : GameObject
     {
+        private Weapon _weapon;
         private int _points;
         private SpriteFont _font;
         private Texture2D ship_body;
@@ -51,8 +52,11 @@ namespace SpaceDefence
             _rectangleCollider.shape.Location -= new Point(ship_body.Width/2, ship_body.Height/2);
             _animPlayer = new AnimationPlayer("Explosion", 15, _rectangleCollider.shape);
             _animPlayer.Load(content);
+            _weapon = new LaserWeapon(laser_turret);
             base.Load(content);
         }
+
+        public Point GetTarget() => target;
 
         public bool HasCargo() => _hasCargo;
         public void AddCargo() => _hasCargo = true;
@@ -81,19 +85,8 @@ namespace SpaceDefence
             base.HandleInput(inputManager);
             target = inputManager.CurrentMouseState.Position;
             if(inputManager.LeftMousePress())
-            {
-                Vector2 aimDirection = LinePieceCollider.GetDirection(GetPosition().Center, target);
-                Vector2 turretExit = _rectangleCollider.shape.Center.ToVector2() + aimDirection * base_turret.Height / 2f;
-                if (buffTimer <= 0)
-                {
-                    GameManager.GetGameManager().AddGameObject(new Bullet(turretExit, aimDirection, 150));
-                }
-                else
-                {
-                    GameManager.GetGameManager().AddGameObject(new Laser(new LinePieceCollider(turretExit, target.ToVector2()),400));
-                }
-            }
-
+                _weapon.Shoot();
+            
             Move(inputManager);
         }
 
@@ -123,11 +116,18 @@ namespace SpaceDefence
             // Update the Buff timer
             if (buffTimer > 0)
                 buffTimer -= (float)gameTime.ElapsedGameTime.TotalSeconds;
+            // Check if buff expired and weapon is still Laser
+            if (_weapon is LaserWeapon && buffTimer <= 0)
+                SetBulletWeapon();
             
             CheckScreenWarp();
             
             base.Update(gameTime);
         }
+
+        public void SetWeapon(Weapon weapon) => _weapon = weapon;
+        public void SetBulletWeapon() => _weapon = new BulletWeapon(base_turret);
+        public void SetLaserWeapon() => _weapon = new LaserWeapon(laser_turret);
 
         private float GetShipAngle()
         {
@@ -148,19 +148,7 @@ namespace SpaceDefence
         {
             float shipAngle = GetShipAngle();
             spriteBatch.Draw(ship_body, _rectangleCollider.shape.Center.ToVector2(), null, Color.White, shipAngle, _rectangleCollider.shape.Size.ToVector2() / 2f, Vector2.One, SpriteEffects.None, 0);
-            float aimAngle = LinePieceCollider.GetAngle(LinePieceCollider.GetDirection(GetPosition().Center, target));
-            if (buffTimer <= 0)
-            {
-                Rectangle turretLocation = base_turret.Bounds;
-                turretLocation.Location = _rectangleCollider.shape.Center;
-                spriteBatch.Draw(base_turret, turretLocation, null, Color.White, aimAngle, turretLocation.Size.ToVector2() / 2f, SpriteEffects.None, 0);
-            }
-            else
-            {
-                Rectangle turretLocation = laser_turret.Bounds;
-                turretLocation.Location = _rectangleCollider.shape.Center;
-                spriteBatch.Draw(laser_turret, turretLocation, null, Color.White, aimAngle, turretLocation.Size.ToVector2() / 2f, SpriteEffects.None, 0);
-            }
+            _weapon.Draw(gameTime, spriteBatch);
             base.Draw(gameTime, spriteBatch);
         }
 

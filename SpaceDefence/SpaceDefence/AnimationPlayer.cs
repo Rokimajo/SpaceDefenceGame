@@ -9,7 +9,7 @@ public class AnimationPlayer : GameObject
 {
     private GameManager _gm;
     private int _time;
-    private GameObject _parent; // Add optional parent;
+    private GameObject _parent; // Add optional parent
                                 // If no parent, assume player is being added to Game Manager as object (one off animations).
                                 // If parent, assume it's a child of another object (repeating animations).
     private Texture2D _spriteSheet;
@@ -69,7 +69,7 @@ public class AnimationPlayer : GameObject
     {
         base.Load(content);
         _spriteSheet ??= content.Load<Texture2D>(_spriteName);
-        _frameSize = _spriteSheet.Height; // Sprite cutout will be a square, so 32x32 for example.
+        _frameSize = _spriteSheet.Height;
         _frameAmount = _spriteSheet.Width / _frameSize;
     }
     

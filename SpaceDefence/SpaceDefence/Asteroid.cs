@@ -42,7 +42,7 @@ public class Asteroid : GameObject
                 return;
             base.OnCollision(other);
             var gm = GameManager.GetGameManager();
-            // Destroy both the asteroid and the other game object on collision
+            // Destroy asteroid and the other game object on collision
             gm.RemoveGameObject(this);
             gm.RemoveGameObject(other);
         }

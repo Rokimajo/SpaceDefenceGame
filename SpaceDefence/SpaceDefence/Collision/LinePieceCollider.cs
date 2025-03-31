@@ -135,10 +135,10 @@ namespace SpaceDefence
         {
             Vector2[] corners = new Vector2[]
             {
-                new Vector2(other.shape.Left, other.shape.Top),     // Top-left
-                new Vector2(other.shape.Right, other.shape.Top),    // Top-right
-                new Vector2(other.shape.Left, other.shape.Bottom),  // Bottom-left
-                new Vector2(other.shape.Right, other.shape.Bottom)  // Bottom-right
+                new Vector2(other.shape.Left, other.shape.Top),
+                new Vector2(other.shape.Right, other.shape.Top),
+                new Vector2(other.shape.Left, other.shape.Bottom),
+                new Vector2(other.shape.Right, other.shape.Bottom)
             };
             
             if (other.Contains(Start) || other.Contains(End))
